@@ -1,0 +1,29 @@
+.button {
+  background: none;
+  border: 3px solid white;
+  color: white;
+  font-family: 'Raleway', sans-serrif;
+  font-weight: 300;
+  font-size: 1.4em;
+  padding: 10px 14px;
+  margin: 20px;
+  transition: all .3s;
+
+  .right-arrow {
+    position: relative;
+    top: 2px;
+    left: 4px;
+    width: 22px;
+    transition: all .3s;
+  }
+
+  &:hover {
+    background-color: $darkBlue;
+    border-color: $darkBlue;
+    cursor: pointer;
+  }
+
+  &:hover .right-arrow{
+    transform: rotate(90deg);
+  }
+}

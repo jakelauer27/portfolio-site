@@ -1,0 +1,89 @@
+.landing-page {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+
+  .canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    background-color: #212632;
+  }
+
+  #canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+  }
+
+  .landing-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 35vh;
+    position: absolute;
+
+    h1 {
+      font-weight: 400;
+      font-size: 3em;
+      margin: 5px;
+    }
+
+    .intro-1 {
+      animation: fadeIn 1.5s ease .6s;
+      animation-fill-mode: both;
+    }
+
+    .landing-span {
+      animation: fadeIn 1.5s ease 1.4s;
+      animation-fill-mode: both;
+    }
+
+    .intro-2-container {
+      display: flex;
+    }
+
+
+  @mixin line2Bounce($delay) {
+    animation: bounceAppear .5s ease $delay; 
+    animation-fill-mode: both;
+  }
+
+    .line2-1 {
+      @include line2Bounce(2.3s);
+    }
+    .line2-2 {
+      @include line2Bounce(2.5s);
+    }
+    .line2-3 {
+      @include line2Bounce(2.7s);
+    }
+    .line2-4 {
+      @include line2Bounce(2.9s);
+    }
+    .line2-5 {
+      @include line2Bounce(3.1s);
+    }
+    .line2-6 {
+      @include line2Bounce(3.3s);
+    }
+    .line2-7 {
+      @include line2Bounce(3.5s);
+    }
+  }
+
+  .landing-button {
+    animation: slideInLeft .7s ease 4s;
+    animation-fill-mode: both;
+  }
+
+  .header-color-2 {
+    color: $mainPurple;
+  }
+}
+
+

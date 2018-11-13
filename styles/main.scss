@@ -1,0 +1,55 @@
+@import './animations';
+@import './vars';
+@import './landing';
+@import './buttons';
+@import './nav';
+@import './about';
+@import './portfolio';
+
+body {
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  background-color: $darkBackground;
+  margin: 0;
+}
+
+section,
+.section-header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin: 0px auto;
+}
+
+.about-header-container {
+  margin: 60px auto 20px;
+}
+
+.section-header {
+  font-weight: 500;
+  font-size: 2.2em;
+  margin: 12px;
+}
+
+.header-line {
+  background-color: $lightGrayBackground;
+  height: 3px;
+  width: 60px;
+}
+
+.body-copy {
+  font-weight: 300;
+  text-align: center;
+  font-size: 1.4em;
+  max-width: 700px;
+
+    a {
+      color: $brightBlue;
+
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+}

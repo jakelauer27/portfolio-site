@@ -1,0 +1,21 @@
+nav {
+  background-color: #141A1D;
+  border-bottom: 2px solid $mainPurple;
+  display: flex;
+  flex-direction: flex-start;
+  padding: 6px;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 12;
+
+  .nav-item {
+    font-size: 1.6em;
+    margin: 7px 20px;
+
+    &:hover {
+      color: $mainPurple;
+      cursor: pointer;
+    }
+  }
+}
