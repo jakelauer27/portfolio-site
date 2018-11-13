@@ -11,7 +11,7 @@ let sectionHeaders = $.merge($('.section-header'), $('.header-line'));
 $(window).scroll( () => {
   $(sectionHeaders).each((i, item) => {
     let distanceFromTop = $(window).scrollTop() - $(item).offset().top;
-    if (distanceFromTop > -700) {
+    if (distanceFromTop > -650) {
       $(item).addClass(`${item.classList[0]}-animation`);
       $(item).removeClass('none');
     }
@@ -26,7 +26,7 @@ $('.profile-container'), $('.icon-container'), $('.graph-container'), $('.drumse
 $(window).scroll( () => {
   aboutSections.forEach(item => {
     let distanceFromTop = $(window).scrollTop() - $(item).offset().top;
-    if (distanceFromTop > -700) {
+    if (distanceFromTop > -650) {
       $(item).addClass(`${item[0].classList[0]}-animation`);
       $(item).removeClass('none');
     }

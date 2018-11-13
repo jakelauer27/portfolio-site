@@ -68,6 +68,10 @@
   animation: barfill 1s ease 0.6s;
   animation-fill-mode: both;
 }
+.graph-container-animation .bar .bar-background p {
+  animation: fadeIn 1.5s ease 0.8s;
+  animation-fill-mode: both;
+}
 
 .drumset-animation {
   animation: bounceUp 450ms linear;
@@ -242,7 +246,7 @@
   animation-fill-mode: both;
 }
 .landing-page .landing-button {
-  animation: slideInLeft 0.7s ease 4s;
+  animation: slideInLeft 0.7s ease 4.4s;
   animation-fill-mode: both;
 }
 .landing-page .header-color-2 {
@@ -328,7 +332,7 @@ nav .nav-item:hover {
 
 .profile-pic {
   border-radius: 50%;
-  width: 220px;
+  width: 280px;
   margin: 30px;
 }
 
@@ -342,6 +346,7 @@ nav .nav-item:hover {
 
 .icon-header {
   margin-bottom: 0;
+  font-size: 1.6em;
 }
 
 .icon-group {
@@ -382,6 +387,7 @@ nav .nav-item:hover {
 
 .bar-label {
   background-color: #28C2E4;
+  border-radius: 3px 0px 0px 3px;
   width: 25%;
   padding: 4px;
   font-size: 1.3em;
@@ -390,6 +396,7 @@ nav .nav-item:hover {
 
 .bar-background {
   background-color: #ECECEC;
+  border-radius: 0px 3px 3px 0px;
   height: 36px;
   position: relative;
   width: 75%;
@@ -405,6 +412,7 @@ nav .nav-item:hover {
 
 .bar-fill {
   background-color: #196096;
+  border-radius: 0px 2px 2px 0px;
   position: absolute;
   height: 36px;
   left: 0px;
@@ -413,11 +421,28 @@ nav .nav-item:hover {
 
 .drumset {
   margin-top: 40px;
+  position: relative;
+  right: 4px;
   width: 180px;
 }
 
 .portfolio-section {
+  padding-top: 30px;
   background-color: #32394B;
+  width: 100%;
+}
+.portfolio-section .projects-container {
+  background-size: cover;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 366px);
+  justify-content: center;
+  width: 80%;
+  margin: 40px auto;
+}
+.portfolio-section .project-item {
+  background-size: cover;
+  height: 300px;
+  width: 366px;
 }
 
 body {

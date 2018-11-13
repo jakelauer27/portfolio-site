@@ -83,6 +83,11 @@
         animation: barfill 1s ease .6s;
         animation-fill-mode: both;
       }
+
+      p {
+        animation: fadeIn 1.5s ease .8s;
+        animation-fill-mode: both;
+      }
     }
   }
 }
