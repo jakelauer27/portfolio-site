@@ -4,12 +4,22 @@ $('.landing-button').click(()=> {
   }, 650);
 })
 
+$('.nav-item').on('click', (e) => {
+  navScroll(e.target.id)
+})
+
+function navScroll(section) {
+  $('html, body').animate({
+    scrollTop: $(`.${section}`).offset().top - 60
+  }, 550);
+}
+
 ///Scrolling Animations 
 
 let sections = [$('.about-section-header'), $('.about-section-header-line'), $('.portfolio-section-header'),
 $('.portfolio-section-header-line'), $('.left-climber'), $('.right-climber'), 
 $('.profile-container'), $('.icon-container'), $('.graph-container'), $('.drumset'), 
-$('.wheel-project'), $('.smash-project'), $('.animate-project')]
+$('.wheel-project'), $('.smash-project'), $('.animate-project'), $('.piano')]
 
 $(window).scroll( () => {
   sections.forEach((item, i) => {
@@ -20,6 +30,20 @@ $(window).scroll( () => {
       sections.splice(i, 1)
     }
   })
+
+  ////// Link Highlighting
+  let pos = $(window).scrollTop();
+
+  if (-75 < pos - $('.home').offset().top) { highlightLink('#home'); }
+  if (-75 < pos - $('.about').offset().top) { highlightLink('#about'); }
+  if (-75 < pos - $('.portfolio').offset().top) { highlightLink('#portfolio'); }
+  if (-75 < pos - $('.talks').offset().top) { highlightLink('#talks'); }
+  if (-75 < pos - $('.connect').offset().top) { highlightLink('#connect'); }
+
+  function highlightLink(link) {
+    $('nav .highlight').removeClass('highlight');
+    $("nav").find(link).addClass('highlight');
+  }
 });
 
 /////Project Popup

@@ -98,7 +98,7 @@
 }
 
 .drumset-animation {
-  animation: bounceUp 450ms linear;
+  animation: bounceUp 550ms linear;
   animation-fill-mode: both;
 }
 
@@ -125,21 +125,30 @@
 .slideOutLeft {
   position: absolute;
   animation: slideInLeftImg .4s linear 0s reverse;
+  animation-fill-mode: forwards;
 }
 
 .slideOutRight {
   position: absolute;
   animation: slideInRightImg .4s linear 0s reverse;
+  animation-fill-mode: forwards;
 }
 
 .slideInLeft {
   position: absolute;
   animation: slideInLeftImg .4s linear 0s;
+  animation-fill-mode: forwards;
 }
 
 .slideInRight {
   position: absolute;
-  animation: slideInRightImg .4s linear 0s;
+  animation: slideInRightImg .4s linear 0s;  
+  animation-fill-mode: forwards;
+}
+
+.piano-animation {
+  animation: bounceUp 550ms linear;
+  animation-fill-mode: both;
 }
 
 @keyframes slideInLeft {

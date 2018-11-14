@@ -12,10 +12,15 @@ nav {
   .nav-item {
     font-size: 1.6em;
     margin: 7px 20px;
+    transition: all .3s ease;
 
     &:hover {
       color: $mainPurple;
       cursor: pointer;
     }
+  }
+
+  .highlight {
+    color: $mainPurple;
   }
 }
