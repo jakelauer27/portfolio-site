@@ -1,5 +1,10 @@
 .none {
   opacity: 0;
+
+  &:after {
+    content: 'scroll';
+    opacity: 1;
+  }
 }
 
 .section-header-animation {
@@ -97,6 +102,46 @@
   animation-fill-mode: both;
 }
 
+.smash-project-animation {
+  animation: slideUp .7s ease 0s;
+  animation-fill-mode: both;
+}
+
+.wheel-project-animation {
+  animation: slideUp .7s ease .4s;
+  animation-fill-mode: both;
+}
+
+.animate-project-animation {
+  animation: slideUp .7s ease .2s;
+  animation-fill-mode: both;
+}
+
+.popup-animation {
+  animation: slideUpPopup .6s ease;
+  animation-fill-mode: both;
+}
+
+.slideOutLeft {
+  position: absolute;
+  animation: slideInLeftImg .4s linear 0s reverse;
+}
+
+.slideOutRight {
+  position: absolute;
+  animation: slideInRightImg .4s linear 0s reverse;
+}
+
+.slideInLeft {
+  position: absolute;
+  animation: slideInLeftImg .4s linear 0s;
+}
+
+.slideInRight {
+  position: absolute;
+  animation: slideInRightImg .4s linear 0s;
+}
+
 @keyframes slideInLeft {
   0% {
     opacity: 0;
@@ -132,6 +177,28 @@
   0% {
     opacity: 0;
     transform: translateY(-200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(150px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes slideUpPopup {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
   }
   100% {
     opacity: 1;
@@ -200,6 +267,23 @@
   100% {
     opacity: 1.0;
     transform: translateY(0px);
-    
+  }
+}
+
+@keyframes slideInRightImg {
+  0% {
+    transform: translateX(600px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes slideInLeftImg {
+  0% {
+    transform: translateX(-600px);
+  }
+  100% {
+    transform: translateX(0px);
   }
 }

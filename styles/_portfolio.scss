@@ -16,5 +16,165 @@
     background-size: cover;
     height: 300px;
     width: 366px;
+
+    h2 {
+      font-size: 2.4em;
+      font-weight: 500;
+      transform: translateY(-300px);
+      transition: all .3s ease;
+    }
+
+    h3 {
+      font-size: 1.4em;
+      font-weight: 300;
+      color: $mainPurple;
+      position: relative;
+      top: -30px;
+      transform: translateY(-300px);
+      transition: all .3s ease;
+    }
+
+    .learn-more-btn {
+      position: relative;
+      top: 10px;
+      transform: translateY(300px);
+    }
+
+    .white-background {
+      opacity: 0;
+      background-color: $darkBackground;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 300px;
+      overflow: hidden;
+      width: 366px;
+      transition: all .5s ease;
+    }
+
+    &:hover .white-background {
+      opacity: .97;
+    }
+
+    &:hover h3,
+    &:hover h2,
+    &:hover .learn-more-btn {
+      transform: translate(0)
+    }
+  }
+}
+
+
+///////Popup
+
+.hide {
+  display: none;
+}
+
+.project-popup {
+  position: fixed;
+  right: calc(50vw - 300px);
+  top: 80px;
+  width: 600px;
+  box-shadow: 0 0 12px 4px rgba(20, 20, 20, 0.74);
+  overflow: hidden;
+  z-index: 99;
+
+  .popup-img-container {
+    overflow: hidden;
+    height: 383px;
+  }
+
+  img {
+    width: 600px;
+  }
+
+  .arrow {
+    background-color: $darkBlue;
+    position: absolute;
+    top: 350px;
+    transition: all .4s ease;
+    width: 23px;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $brightBlue;
+    }
+  }
+
+  .right-arrow {
+    border-radius: 4px 0  0 0;
+    padding: 5px 3px 5px 8px;
+    right: 0px;
+  }
+
+  .left-arrow {
+    border-radius: 0 4px 0 0;
+    padding: 5px 8px 5px 3px;
+    left: 0px;
+  }
+
+  .popup-content-container {
+    background-color: $lightGrayBackground;
+    color: black;
+    margin-top: -10px;
+    padding: 16px 10px 8px;
+    overflow: hidden;
+
+    .popup-underline {
+      background-color: rgb(170, 170, 170);
+      height: 1px; 
+      width: 270px;
+    }
+
+    h2 {
+      margin: 0;
+      font-weight: 600;
+      font-size: 1.8em;
+    }
+
+    .popup-button {
+      font-size: 1em;
+      border-width: 2px;
+      color: black;
+      border-color: black;
+      margin: 3px;
+      padding: 5px;
+
+      a {
+        color: black;
+        text-decoration: none;
+        transition: all .4s ease;
+      }
+
+      &:hover {
+        color: white;
+        border-color: $brightBlue;
+        background-color: $brightBlue;
+      }
+
+      &:hover a {
+        color: white;
+      }
+    }
+
+    .x-button {
+      animation: none; 
+      border: 2px solid black;
+      border-radius: 50%;
+      float: right;
+      font-size: 1em;
+      padding: 5px 8px;
+      position: relative;
+      transition: all .4s ease;
+      top: 8px;
+
+      &:hover {
+        color: white;
+        cursor: pointer;
+        border-color: $brightBlue;
+        background-color: $brightBlue;
+      }
+    }
   }
 }

@@ -2,6 +2,10 @@
 .none {
   opacity: 0;
 }
+.none:after {
+  content: "scroll";
+  opacity: 1;
+}
 
 .section-header-animation {
   animation: slideInLeft 1s ease;
@@ -78,6 +82,46 @@
   animation-fill-mode: both;
 }
 
+.smash-project-animation {
+  animation: slideUp 0.7s ease 0s;
+  animation-fill-mode: both;
+}
+
+.wheel-project-animation {
+  animation: slideUp 0.7s ease 0.4s;
+  animation-fill-mode: both;
+}
+
+.animate-project-animation {
+  animation: slideUp 0.7s ease 0.2s;
+  animation-fill-mode: both;
+}
+
+.popup-animation {
+  animation: slideUpPopup 0.6s ease;
+  animation-fill-mode: both;
+}
+
+.slideOutLeft {
+  position: absolute;
+  animation: slideInLeftImg 0.4s linear 0s reverse;
+}
+
+.slideOutRight {
+  position: absolute;
+  animation: slideInRightImg 0.4s linear 0s reverse;
+}
+
+.slideInLeft {
+  position: absolute;
+  animation: slideInLeftImg 0.4s linear 0s;
+}
+
+.slideInRight {
+  position: absolute;
+  animation: slideInRightImg 0.4s linear 0s;
+}
+
 @keyframes slideInLeft {
   0% {
     opacity: 0;
@@ -110,6 +154,26 @@
   0% {
     opacity: 0;
     transform: translateY(-200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(150px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@keyframes slideUpPopup {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
   }
   100% {
     opacity: 1;
@@ -172,6 +236,22 @@
   100% {
     opacity: 1;
     transform: translateY(0px);
+  }
+}
+@keyframes slideInRightImg {
+  0% {
+    transform: translateX(600px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+@keyframes slideInLeftImg {
+  0% {
+    transform: translateX(-600px);
+  }
+  100% {
+    transform: translateX(0px);
   }
 }
 .landing-page {
@@ -444,12 +524,158 @@ nav .nav-item:hover {
   height: 300px;
   width: 366px;
 }
+.portfolio-section .project-item h2 {
+  font-size: 2.4em;
+  font-weight: 500;
+  transform: translateY(-300px);
+  transition: all 0.3s ease;
+}
+.portfolio-section .project-item h3 {
+  font-size: 1.4em;
+  font-weight: 300;
+  color: #9F68FF;
+  position: relative;
+  top: -30px;
+  transform: translateY(-300px);
+  transition: all 0.3s ease;
+}
+.portfolio-section .project-item .learn-more-btn {
+  position: relative;
+  top: 10px;
+  transform: translateY(300px);
+}
+.portfolio-section .project-item .white-background {
+  opacity: 0;
+  background-color: #212632;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 300px;
+  overflow: hidden;
+  width: 366px;
+  transition: all 0.5s ease;
+}
+.portfolio-section .project-item:hover .white-background {
+  opacity: 0.97;
+}
+.portfolio-section .project-item:hover h3, .portfolio-section .project-item:hover h2, .portfolio-section .project-item:hover .learn-more-btn {
+  transform: translate(0);
+}
+
+.hide {
+  display: none;
+}
+
+.project-popup {
+  position: fixed;
+  right: calc(50vw - 300px);
+  top: 80px;
+  width: 600px;
+  box-shadow: 0 0 12px 4px rgba(20, 20, 20, 0.74);
+  overflow: hidden;
+  z-index: 99;
+}
+.project-popup .popup-img-container {
+  overflow: hidden;
+  height: 383px;
+}
+.project-popup img {
+  width: 600px;
+}
+.project-popup .arrow {
+  background-color: #196096;
+  position: absolute;
+  top: 350px;
+  transition: all 0.4s ease;
+  width: 23px;
+}
+.project-popup .arrow:hover {
+  cursor: pointer;
+  background-color: #0AD3FF;
+}
+.project-popup .right-arrow {
+  border-radius: 4px 0 0 0;
+  padding: 5px 3px 5px 8px;
+  right: 0px;
+}
+.project-popup .left-arrow {
+  border-radius: 0 4px 0 0;
+  padding: 5px 8px 5px 3px;
+  left: 0px;
+}
+.project-popup .popup-content-container {
+  background-color: #ECECEC;
+  color: black;
+  margin-top: -10px;
+  padding: 16px 10px 8px;
+  overflow: hidden;
+}
+.project-popup .popup-content-container .popup-underline {
+  background-color: #aaaaaa;
+  height: 1px;
+  width: 270px;
+}
+.project-popup .popup-content-container h2 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1.8em;
+}
+.project-popup .popup-content-container .popup-button {
+  font-size: 1em;
+  border-width: 2px;
+  color: black;
+  border-color: black;
+  margin: 3px;
+  padding: 5px;
+}
+.project-popup .popup-content-container .popup-button a {
+  color: black;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+.project-popup .popup-content-container .popup-button:hover {
+  color: white;
+  border-color: #0AD3FF;
+  background-color: #0AD3FF;
+}
+.project-popup .popup-content-container .popup-button:hover a {
+  color: white;
+}
+.project-popup .popup-content-container .x-button {
+  animation: none;
+  border: 2px solid black;
+  border-radius: 50%;
+  float: right;
+  font-size: 1em;
+  padding: 5px 8px;
+  position: relative;
+  transition: all 0.4s ease;
+  top: 8px;
+}
+.project-popup .popup-content-container .x-button:hover {
+  color: white;
+  cursor: pointer;
+  border-color: #0AD3FF;
+  background-color: #0AD3FF;
+}
 
 body {
   font-family: "Raleway", sans-serif;
   color: white;
   background-color: #212632;
   margin: 0;
+  z-index: 50;
+}
+
+.dark-overlay {
+  background-color: rgba(0, 0, 0, 0.678);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: all 0.4s ease;
+  z-index: 40;
 }
 
 section,

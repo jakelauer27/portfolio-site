@@ -5,9 +5,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Jake Lauer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" media="screen" href="styles/main.css" />
 </head>
 <body>
+  <div class="dark-overlay hide"></div>
   <div class="landing-page">
     <div class="canvas">
       <canvas id="canvas"></canvas>
@@ -37,8 +39,8 @@
   </nav> 
   <section class="about-section">
     <div class="section-header-container about-header-container">
-      <h1 class="section-header none">ABOUT</h1>
-      <div class="header-line none"></div>
+      <h1 class="section-header about-section-header none">ABOUT</h1>
+      <div class="header-line about-section-header-line none"></div>
     </div>
     <img class="left-climber none" src="images/climbing.svg" rel="Climber"/>
     <img class="right-climber none" src="images/climber.svg" rel="Climber"/>
@@ -167,18 +169,33 @@
   </section>
   <section class="portfolio-section">
     <div class='section-header-container'>
-      <h1 class="section-header none">PORTFOLIO</h1>
-      <div class="header-line none"></div>
+      <h1 class="section-header portfolio-section-header none">PORTFOLIO</h1>
+      <div class="header-line portfolio-section-header-line none"></div>
     </div>
     <div class="projects-container">
-      <div class="project-item" style="background-image: url('images/smash_thumbnail.png')">
+      <div class="smash-project project-item none" style="background-image: url('images/smash_thumbnail.png')">
+        <div class="white-background">
+          <h2>SmashNerd</h2>
+          <h3>reactjs + sass</h3>
+          <button class="button learn-more-btn smash-project">Learn More</button>
+        </div>
       </div>
-      <div class="project-item" style="background-image: url('images/animate_thumb.png')">
+      <div class="animate-project project-item t none" style="background-image: url('images/animate_thumb.png')">
+        <div class="white-background">
+          <h2>CSS aniMate</h2>
+          <h3>reactjs</h3>
+          <button class="button learn-more-btn animate-project">Learn More</button>
+        </div>
       </div>
-      <div class="project-item" style="background-image: url('images/wheel_thumbnail.png')">
+      <div class="wheel-project project-item none" style="background-image: url('images/wheel_thumbnail.png')">
+        <div class="white-background">
+          <h2>Wheel of Fortune</h2>
+          <h3>javascript+jquery</h3>
+          <button class="button learn-more-btn wheel-project">Learn More</button>
+        </div>
       </div>
     </div>
-  </section>
+   </section>
   <section class="talks-section">
     <div class='section-header-container'>
       <h1 class="section-header none">TALKS</h1>
@@ -191,6 +208,65 @@
       <div class="header-line none"></div>
     </div>
   </section>
+  <aside class="project-popup hide smash-project-popup">
+    <div class="popup-img-container">
+      <img class="smash-project-image" src="images/smash0.png"/>
+      <img class="smash-project-image hide" src="images/smash1.png"/>
+      <img class="smash-project-image hide" src="images/smash2.png"/>
+      <img class="smash-project-image hide" src="images/smash3.png"/>
+      <img class="smash-project-image hide" src="images/smash4.png"/>
+    </div>
+      <img class="arrow left-arrow" src="images/left-arrow.svg" />
+      <img class="arrow right-arrow" src="images/right-arrow.svg" />
+    <div class="popup-content-container">
+      <h2 class="popup-title">SmashNerd</h2>
+      <div class="popup-underline"></div>
+      <p>SmashNerd is the quintessential site for fans of the timeless 
+        Smash Brothers Games. It compiles character and stage 
+        statistics into a clean and user-friendly site, allowing dedicated 
+        smash nerds to access all of the info they need to select the character 
+        that’s best for them. </p>
+      <button class="button popup-button"><a href="https://jakelauer27.github.io/smash_brothers/" target="_blank">Visit Site</a></button>
+      <i class="fa fa-times x-button smash-project" aria-hidden="true"></i>
+    </div>
+  </aside>
+  <aside class="project-popup hide wheel-project-popup">
+    <div class="popup-img-container">
+      <img class="wheel-project-image" src="images/wheel1.png"/>
+      <img class="wheel-project-image hide" src="images/wheel2.png"/>
+      <img class="wheel-project-image hide" src="images/wheel3.png"/>
+    </div>
+    <img class="arrow left-arrow"src="images/left-arrow.svg" />
+    <img class="arrow right-arrow" src="images/right-arrow.svg" />
+    <div class="popup-content-container">
+      <h2 class="popup-title">Wheel of Fortune</h2>
+      <p>Enjoy a round of this three-player recreation of the classic Wheel of Fortune 
+        game. Spin the wheel with friends and solve the puzzles to 
+        compete for a chance to spin the bonus wheel and take home massive 
+        prizes! Or fly solo and play against a couple of AI players! </p>
+      <button class="button popup-button"><a href="https://jakelauer27.github.io/wheel-of-fortune/" target="_blank">Visit Site</a></button>
+      <i class="fa fa-times x-button wheel-project" aria-hidden="true"></i>
+    </div>
+  </aside>
+  <aside class="project-popup hide animate-project-popup">
+    <div class="popup-img-container">
+      <img class="animate-project-image" src="images/animate1.png"/>
+      <img class="animate-project-image hide" src="images/animate2.png"/>
+      <img class="animate-project-image hide" src="images/animate3.png"/>
+    </div>
+    <img class="arrow left-arrow"src="images/left-arrow.svg" />
+    <img class="arrow right-arrow" src="images/right-arrow.svg" />
+    <div class="popup-content-container">
+      <h2 class="popup-title">CSS aniMate</h2>
+      <p>SCSS Animate provides a playground for web developers to create 
+        and adjust CSS keyframes animations, displaying the results 
+        in real time. Find an animation you like, make your tweaks, 
+        and copy the code into your project. </p>
+      <button class="button popup-button"><a href="https://jakelauer27.github.io/css-animate/" target="_blank">Visit Site</a></button>
+      <i class="fa fa-times x-button animate-project" aria-hidden="true"></i>
+    </div>
+  </aside>
+  
 <script src="scripts/jquery.min.js"></script>
 <script src="scripts/index.js"></script>
 <script src="scripts/canvas.js"></script>
