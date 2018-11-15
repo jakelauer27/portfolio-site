@@ -104,17 +104,17 @@
 
 .smash-project-animation {
   animation: slideUp .7s ease 0s;
-  animation-fill-mode: both;
+  animation-fill-mode: backwards;
 }
 
 .wheel-project-animation {
   animation: slideUp .7s ease .4s;
-  animation-fill-mode: both;
+  animation-fill-mode: backwards;
 }
 
 .animate-project-animation {
   animation: slideUp .7s ease .2s;
-  animation-fill-mode: both;
+  animation-fill-mode: backwards;
 }
 
 .popup-animation {

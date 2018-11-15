@@ -13,6 +13,7 @@
   }
 
   .project-item {
+    box-shadow: 0 0 12px 4px rgba(20, 20, 20, 0.74);
     background-size: cover;
     height: 300px;
     width: 366px;
@@ -59,7 +60,7 @@
     &:hover h3,
     &:hover h2,
     &:hover .learn-more-btn {
-      transform: translate(0)
+      transform: translateY(0)
     }
   }
 }

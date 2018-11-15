@@ -17,14 +17,15 @@ function navScroll(section) {
 ///Scrolling Animations 
 
 let sections = [$('.about-section-header'), $('.about-section-header-line'), $('.portfolio-section-header'),
-$('.portfolio-section-header-line'), $('.left-climber'), $('.right-climber'), 
+$('.portfolio-section-header-line'), $('.talks-section-header'), $('.talks-section-header-line'), 
+$('.connect-section-header'), $('.connect-section-header-line'), $('.left-climber'), $('.right-climber'), 
 $('.profile-container'), $('.icon-container'), $('.graph-container'), $('.drumset'), 
 $('.wheel-project'), $('.smash-project'), $('.animate-project'), $('.piano')]
 
 $(window).scroll( () => {
   sections.forEach((item, i) => {
     let distanceFromTop = $(window).scrollTop() - $(item).offset().top;
-    if (distanceFromTop > -650) {
+    if (distanceFromTop > -550) {
       $(item).addClass(`${item[0].classList[0]}-animation`);
       $(item).removeClass('none');
       sections.splice(i, 1)
@@ -38,7 +39,7 @@ $(window).scroll( () => {
   if (-75 < pos - $('.about').offset().top) { highlightLink('#about'); }
   if (-75 < pos - $('.portfolio').offset().top) { highlightLink('#portfolio'); }
   if (-75 < pos - $('.talks').offset().top) { highlightLink('#talks'); }
-  if (-75 < pos - $('.connect').offset().top) { highlightLink('#connect'); }
+  if (pos + $(window).height() == $(document).height()) { highlightLink('#connect'); }
 
   function highlightLink(link) {
     $('nav .highlight').removeClass('highlight');
@@ -93,6 +94,8 @@ function displayPopup(project) {
   $('.dark-overlay').removeClass('hide');
 }
 
+///////Continous Scrolling + animations
+
 function imageSlide(direction, project) {
   let slides = $(`.${project}-image`);
   let slideOutDirection = '';
@@ -124,3 +127,4 @@ function imageSlide(direction, project) {
     $(slides[currentSlide]).removeClass(slideInDirection);
   }, 400)
 }
+

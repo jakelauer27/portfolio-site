@@ -5,12 +5,15 @@
 @import './nav';
 @import './about';
 @import './portfolio';
+@import './connect';
+@import './talks';
 
 body {
   font-family: 'Raleway', sans-serif;
   color: white;
   background-color: $darkBackground;
   margin: 0;
+  overflow-x: hidden; 
   z-index: 50;
 }
 

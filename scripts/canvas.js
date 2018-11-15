@@ -6,19 +6,17 @@ window.requestAnimFrame = function()
 			window.mozRequestAnimationFrame    || 
 			window.oRequestAnimationFrame      || 
 			window.msRequestAnimationFrame     || 
-			function(/* function */ callback){
+			function(callback){
 				window.setTimeout(callback, 1000 / 60);
 			}
 		);
 }();
 
-var canvas = document.getElementById('canvas'); 
-var context = canvas.getContext('2d');
+const canvas = document.getElementById('canvas'); 
+const context = canvas.getContext('2d');
 
-//get DPI
 let dpi = window.devicePixelRatio || 1;
 context.scale(dpi, dpi);
-console.log(dpi);
 
 function fix_dpi() {
 //get CSS height
@@ -32,20 +30,20 @@ canvas.setAttribute('height', style_height * dpi);
 canvas.setAttribute('width', style_width * dpi);
 }
 
-	var particle_count = 100,
+	const particle_count = 100,
 		particles = [],
-		couleurs   = ["rgba(161,106,255, .5)", "rgba(25,96,150, .5)", "rgba(81,40,156, .5)"];
-    function Particle()
-    {
-
+    colors = ["rgba(161,106,255, .5)", "rgba(25,96,150, .5)", "rgba(81,40,156, .5)"];
+    
+    class Particle {
+      constructor() {
         this.radius = Math.round((Math.random()*3)+2);
         this.x = Math.floor((Math.random() * ((+getComputedStyle(canvas).getPropertyValue("width").slice(0, -2) * dpi) - this.radius + 1) + this.radius));
         this.y = Math.floor((Math.random() * ((+getComputedStyle(canvas).getPropertyValue("height").slice(0, -2) * dpi) - this.radius + 1) + this.radius));
-        this.color = couleurs[Math.round(Math.random()*couleurs.length)];
+        this.color = colors[Math.round(Math.random()*colors.length-1)];
         this.speedx = Math.round((Math.random()*151)+0)/100;
         this.speedy = Math.round((Math.random()*151)+0)/100;
-
-        switch (Math.round(Math.random()*couleurs.length))
+  
+        switch (Math.round(Math.random()*colors.length))
         {
             case 1:
             this.speedx *= .6;
@@ -59,85 +57,77 @@ canvas.setAttribute('width', style_width * dpi);
             this.speedx *= .4;
             this.speedy *= -.4;
             break;
-            case 4:
-            this.speedx *= -.4;
-            this.speedy *= -.4;
-            break;
         }
-            
-        this.move = function()
+      }
+
+      move() {
+        context.beginPath();
+        context.globalCompositeOperation = 'source-over';
+        context.fillStyle = this.color;
+        context.globalAlpha = 1;
+        context.arc(this.x, this.y, this.radius, 0, Math.PI*2, false);
+        context.fill();
+        context.closePath();
+
+        this.x = this.x + this.speedx;
+        this.y = this.y + this.speedy;
+        
+        if(this.x <= 0+this.radius)
         {
-            
-            context.beginPath();
-            context.globalCompositeOperation = 'source-over';
-            context.fillStyle   = this.color;
-            context.globalAlpha = 1;
-            context.arc(this.x, this.y, this.radius, 0, Math.PI*2, false);
-            context.fill();
-            context.closePath();
+            this.speedx *= -1;
+        }
+        if(this.x >= canvas.width-this.radius)
+        {
+            this.speedx *= -1;
+        }
+        if(this.y <= 0+this.radius)
+        {
+            this.speedy *= -1;
+        }
+        if(this.y >= canvas.height-this.radius)
+        {
+            this.speedy *= -1;
+        }
 
-            this.x = this.x + this.speedx;
-            this.y = this.y + this.speedy;
-            
-            if(this.x <= 0+this.radius)
-            {
-                this.speedx *= -1;
-            }
-            if(this.x >= canvas.width-this.radius)
-            {
-                this.speedx *= -1;
-            }
-            if(this.y <= 0+this.radius)
-            {
-                this.speedy *= -1;
-            }
-            if(this.y >= canvas.height-this.radius)
-            {
-                this.speedy *= -1;
-            }
+        for (let j = 0; j < particle_count; j++)
+        {
+            let particleActuelle = particles[j],
+                yd = particleActuelle.y - this.y,
+                xd = particleActuelle.x - this.x,
+                d  = Math.sqrt(xd * xd + yd * yd);
 
-            for (var j = 0; j < particle_count; j++)
+            if ( d < 300 )
             {
-                var particleActuelle = particles[j],
-                    yd = particleActuelle.y - this.y,
-                    xd = particleActuelle.x - this.x,
-                    d  = Math.sqrt(xd * xd + yd * yd);
-
-                if ( d < 300 )
-                {
-                    context.beginPath();
-                    context.globalAlpha = (300 - d) / (300 - 0);
-                    context.globalCompositeOperation = 'destination-over';
-                    context.lineWidth = 2;
-                    context.moveTo(this.x, this.y);
-                    context.lineTo(particleActuelle.x, particleActuelle.y);
-                    context.strokeStyle = this.color;
-                    context.lineCap = "round";
-                    context.stroke();
-                    context.closePath();
-                }
+                context.beginPath();
+                context.globalAlpha = (300 - d) / (300 - 0);
+                context.globalCompositeOperation = 'destination-over';
+                context.lineWidth = 2;
+                context.moveTo(this.x, this.y);
+                context.lineTo(particleActuelle.x, particleActuelle.y);
+                context.strokeStyle = this.color;
+                context.lineCap = "round";
+                context.stroke();
+                context.closePath();
             }
-        };
+        }
+      }
     };
-    for (var i = 0; i < particle_count; i++)
+    for (let i = 0; i < particle_count; i++)
     {
         fix_dpi();
-        var particle = new Particle();
+        const particle = new Particle();
         particles.push(particle);
     }
-
 
     function animate()
     {
         fix_dpi();
         context.clearRect(0, 0, canvas.width, canvas.height);
-        for (var i = 0; i < particle_count; i++)
+        for (let i = 0; i < particle_count; i++)
         {
             particles[i].move();
         }
         requestAnimFrame(animate);
     }
-    
-
    
     animate(); 

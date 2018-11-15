@@ -1,0 +1,62 @@
+.talks {
+
+  .talks-header {
+    padding: 35px;
+  }
+  
+  .talks-container {
+    margin: 60px auto 100px;
+  }
+  
+  .talk-item {
+    box-shadow: 0 0 12px 4px rgba(20, 20, 20, 0.74);
+    height: 300px;
+    width: 366px;
+  
+    h2 {
+      font-size: 2.4em;
+      font-weight: 500;
+      transform: translateY(-300px);
+      transition: all .3s ease;
+    }
+
+    h3 {
+      font-size: 1.4em;
+      font-weight: 300;
+      color: $mainPurple;
+      position: relative;
+      top: -30px;
+      transform: translateY(-300px);
+      transition: all .3s ease;
+    }
+
+    .learn-more-btn {
+      position: relative;
+      top: 10px;
+      transform: translateY(100px);
+    }
+
+    &:hover .white-background {
+      opacity: .97;
+    }
+
+    &:hover h3,
+    &:hover h2,
+    &:hover .learn-more-btn {
+      transform: translateY(0)
+    }
+  }
+  
+  .white-background {
+    opacity: 0;
+    background-color: $lessDarkBackground;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 300px;
+    overflow: hidden;
+    width: 366px;
+    transition: all .5s ease;
+  }
+
+}

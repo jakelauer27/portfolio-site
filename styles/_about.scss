@@ -3,9 +3,10 @@
 }
 
 .profile-container {
+  align-items: center;
   display: flex; 
   flex-direction: column;
-  align-items: center;
+  position: relative;
 }
 
 .left-climber {
@@ -14,6 +15,7 @@
   left: -9px;
   width: 280px;
   opacity: 0;
+  z-index: 1;
 }
 
 .right-climber {
@@ -22,6 +24,7 @@
   top: -1px;
   width: 280px;
   opacity: 0;
+  z-index: 1;
 }
 
 .diamond-shape {
@@ -29,9 +32,12 @@
 }
 
 .profile-pic {
+  box-shadow: 0 0 12px 4px rgba(20, 20, 20, 0.74);
   border-radius: 50%;
-  width: 280px;
+  width: 220px;
   margin: 30px;
+  position: relative;
+  z-index: 4;
 }
 
 .icon-container {

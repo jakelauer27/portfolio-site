@@ -84,17 +84,17 @@
 
 .smash-project-animation {
   animation: slideUp 0.7s ease 0s;
-  animation-fill-mode: both;
+  animation-fill-mode: backwards;
 }
 
 .wheel-project-animation {
   animation: slideUp 0.7s ease 0.4s;
-  animation-fill-mode: both;
+  animation-fill-mode: backwards;
 }
 
 .animate-project-animation {
   animation: slideUp 0.7s ease 0.2s;
-  animation-fill-mode: both;
+  animation-fill-mode: backwards;
 }
 
 .popup-animation {
@@ -398,9 +398,10 @@ nav .highlight {
 }
 
 .profile-container {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  position: relative;
 }
 
 .left-climber {
@@ -409,6 +410,7 @@ nav .highlight {
   left: -9px;
   width: 280px;
   opacity: 0;
+  z-index: 1;
 }
 
 .right-climber {
@@ -417,6 +419,7 @@ nav .highlight {
   top: -1px;
   width: 280px;
   opacity: 0;
+  z-index: 1;
 }
 
 .diamond-shape {
@@ -424,9 +427,12 @@ nav .highlight {
 }
 
 .profile-pic {
+  box-shadow: 0 0 12px 4px rgba(20, 20, 20, 0.74);
   border-radius: 50%;
-  width: 280px;
+  width: 220px;
   margin: 30px;
+  position: relative;
+  z-index: 4;
 }
 
 .icon-container {
@@ -533,6 +539,7 @@ nav .highlight {
   margin: 40px auto;
 }
 .portfolio-section .project-item {
+  box-shadow: 0 0 12px 4px rgba(20, 20, 20, 0.74);
   background-size: cover;
   height: 300px;
   width: 366px;
@@ -572,7 +579,7 @@ nav .highlight {
   opacity: 0.97;
 }
 .portfolio-section .project-item:hover h3, .portfolio-section .project-item:hover h2, .portfolio-section .project-item:hover .learn-more-btn {
-  transform: translate(0);
+  transform: translateY(0);
 }
 
 .hide {
@@ -677,11 +684,283 @@ nav .highlight {
   width: 180px;
 }
 
+.connect {
+  background-color: #32394B;
+  position: relative;
+  height: 418px;
+  overflow: hidden;
+}
+
+.connect-header {
+  padding-top: 30px;
+}
+
+.copyright {
+  font-weight: 300;
+  margin-bottom: 60px;
+  position: relative;
+  text-shadow: 1px 1px black;
+  z-index: 1;
+}
+
+.header-color-2 {
+  color: #9F68FF;
+}
+
+.social-icon-container {
+  display: flex;
+  height: 130px;
+  margin: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.social-box {
+  background-color: #212632;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 30px;
+  margin: 20px;
+  width: 33px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+.social-box:hover .social-icon {
+  cursor: pointer;
+  transform: scale(1.12);
+  color: white;
+}
+.social-box:hover::after {
+  cursor: pointer;
+  transform: rotate(45deg) translate(-110px, -40px);
+}
+.social-box:after {
+  content: "";
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  transform: rotate(45deg) translate(-150px, 160px);
+  transition: all 0.4s ease;
+}
+
+.github-box:after {
+  background-color: #eba343;
+}
+
+.email-box:after {
+  background-color: #9F68FF;
+}
+
+.linkedIn-box:after {
+  background-color: #0077B5;
+}
+
+.rickRoll-box:after {
+  background-color: #65be65;
+}
+
+.social-icon {
+  transition: all 0.2s ease;
+  font-size: 2.2em;
+  position: absolute;
+  top: 25px;
+  right: 29px;
+  z-index: 13;
+  width: 34px;
+}
+
+.github {
+  color: #eba343;
+}
+
+.linkedIn {
+  color: #0077B5;
+}
+
+.email {
+  color: #9F68FF;
+}
+
+.rickRoll {
+  color: #65be65;
+}
+
+.snowboarder {
+  animation: snowboarder 14s linear 0s infinite;
+  bottom: 0;
+  left: 630px;
+  position: absolute;
+  transform: rotate(6deg) translateX(-300px);
+  width: 150px;
+}
+
+.snowboarder2 {
+  animation: snowboarder2 14s linear 6s infinite;
+  bottom: 0;
+  left: 630px;
+  opacity: 0;
+  position: absolute;
+  transform: rotate(26deg) translateX(-300px);
+  width: 150px;
+}
+
+.snow-hill1 {
+  background-color: white;
+  width: 500px;
+  height: 600px;
+  position: absolute;
+  top: 160px;
+  left: -260px;
+  transform: rotate(30deg);
+}
+
+.snow-hill2 {
+  background-color: white;
+  width: 700px;
+  height: 600px;
+  position: absolute;
+  top: 360px;
+  left: 160px;
+  transform: rotate(15deg);
+}
+
+.snow-hill3 {
+  background-color: white;
+  width: 1000px;
+  height: 600px;
+  position: absolute;
+  top: 400px;
+  left: 560px;
+  transform: rotate(2deg);
+}
+
+@keyframes snowboarder {
+  0% {
+    transform: translate(-1000px, -387px) rotate(40deg);
+  }
+  5% {
+    transform: translate(-700px, -290px) rotate(30deg);
+  }
+  10% {
+    transform: translate(-400px, -115px) rotate(25deg);
+  }
+  15% {
+    transform: translate(-100px, -28px) rotate(16deg);
+  }
+  20% {
+    transform: translate(200px, 5px) rotate(1deg);
+  }
+  25% {
+    transform: translate(500px, -7px);
+  }
+  30% {
+    transform: translate(800px, 16px) rotate(0deg);
+  }
+  35% {
+    transform: translate(1100px, -10px);
+  }
+  40% {
+    transform: translate(1400px, 5px) rotate(15deg);
+  }
+  45% {
+    transform: translate(1700px, -7px);
+  }
+  100% {
+    transform: translateX(2000px);
+  }
+}
+@keyframes snowboarder2 {
+  0% {
+    opacity: 1;
+    transform: translate(-1000px, -430px) rotate(40deg);
+  }
+  3% {
+    transform: translate(-700px, -380px) rotate(40deg);
+  }
+  6% {
+    transform: translate(-400px, -160px) rotate(40deg);
+  }
+  9% {
+    transform: translate(-100px, 0px) rotate(40deg);
+  }
+  13% {
+    transform: translate(200px, 5px) rotate(1deg);
+  }
+  17% {
+    transform: translate(500px, -7px) rotate(-6deg);
+  }
+  22% {
+    transform: translate(800px, 16px) rotate(2deg);
+  }
+  27% {
+    transform: translate(1100px, -10px) rotate(-5deg);
+  }
+  32% {
+    transform: translate(1400px, 5px) rotate(15deg);
+  }
+  37% {
+    transform: translate(1700px, -7px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(2000px);
+  }
+}
+.talks .talks-header {
+  padding: 35px;
+}
+.talks .talks-container {
+  margin: 60px auto 100px;
+}
+.talks .talk-item {
+  box-shadow: 0 0 12px 4px rgba(20, 20, 20, 0.74);
+  height: 300px;
+  width: 366px;
+}
+.talks .talk-item h2 {
+  font-size: 2.4em;
+  font-weight: 500;
+  transform: translateY(-300px);
+  transition: all 0.3s ease;
+}
+.talks .talk-item h3 {
+  font-size: 1.4em;
+  font-weight: 300;
+  color: #9F68FF;
+  position: relative;
+  top: -30px;
+  transform: translateY(-300px);
+  transition: all 0.3s ease;
+}
+.talks .talk-item .learn-more-btn {
+  position: relative;
+  top: 10px;
+  transform: translateY(100px);
+}
+.talks .talk-item:hover .white-background {
+  opacity: 0.97;
+}
+.talks .talk-item:hover h3, .talks .talk-item:hover h2, .talks .talk-item:hover .learn-more-btn {
+  transform: translateY(0);
+}
+.talks .white-background {
+  opacity: 0;
+  background-color: #32394B;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 300px;
+  overflow: hidden;
+  width: 366px;
+  transition: all 0.5s ease;
+}
+
 body {
   font-family: "Raleway", sans-serif;
   color: white;
   background-color: #212632;
   margin: 0;
+  overflow-x: hidden;
   z-index: 50;
 }
 
