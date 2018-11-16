@@ -9,21 +9,13 @@
   margin: 20px;
   transition: all .3s;
 
-  .right-arrow {
-    position: relative;
-    top: 2px;
-    left: 4px;
-    width: 22px;
-    transition: all .3s;
-  }
-
   &:hover {
     background-color: $darkBlue;
     border-color: $darkBlue;
     cursor: pointer;
   }
 
-  &:hover .right-arrow{
+  &:hover .right-arrow {
     transform: rotate(90deg);
   }
 }

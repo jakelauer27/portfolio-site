@@ -11,7 +11,7 @@
 
 .left-climber {
   position: absolute;
-  top: -2px;
+  top: -17px;
   left: -9px;
   width: 280px;
   opacity: 0;
@@ -20,9 +20,9 @@
 
 .right-climber {
   position: absolute;
-  right: -65px; 
-  top: -1px;
-  width: 280px;
+  right: -2px; 
+  top: -10px;
+  width: 240px;
   opacity: 0;
   z-index: 1;
 }
@@ -38,6 +38,24 @@
   margin: 30px;
   position: relative;
   z-index: 4;
+}
+
+.body-copy {
+  font-weight: 300;
+  text-align: center;
+  font-size: 1.4em;
+  max-width: 700px;
+  padding: 0px 30px;
+
+    a {
+      color: $brightBlue;
+      text-decoration: none;
+
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
 }
 
 .icon-container {
@@ -110,6 +128,7 @@
 
   p {
     color: black;
+    text-shadow: 1px 1px white;
     font-size: 1.3em;
     font-weight: 300;
     position: absolute;
@@ -132,4 +151,46 @@
   position: relative;
   right: 4px;
   width: 180px;
+}
+
+@media screen and (max-width: 740px) {
+  .bar-label {
+    font-size: 1em;
+    min-width: 120px;
+    padding-top: 9px;
+  }
+}
+
+@media screen and (max-width: 675px) {
+  .left-climber {
+    width: 200px;
+  }
+
+  .right-climber {
+    width: 180px;
+  }
+
+  .icon-group {
+    font-size: 1.2em;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .left-climber {
+    width: 120px;
+  }
+
+  .right-climber {
+    width: 90px;
+  }
+
+  .icon-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .icon-group {
+    width: 100%;
+    margin: 20px auto;
+  }
 }

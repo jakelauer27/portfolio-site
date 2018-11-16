@@ -1,5 +1,6 @@
-@import './animations';
 @import './vars';
+@import './keyframes';
+@import './animations';
 @import './landing';
 @import './buttons';
 @import './nav';
@@ -51,21 +52,4 @@ section,
   background-color: $lightGrayBackground;
   height: 3px;
   width: 60px;
-}
-
-.body-copy {
-  font-weight: 300;
-  text-align: center;
-  font-size: 1.4em;
-  max-width: 700px;
-
-    a {
-      color: $brightBlue;
-      text-decoration: none;
-
-    &:hover {
-      cursor: pointer;
-      text-decoration: underline;
-    }
-  }
 }

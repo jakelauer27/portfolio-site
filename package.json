@@ -1,6 +1,7 @@
 {
   "name": "portfolio-site",
   "version": "1.0.0",
+  "homepage": "https://jakelauer27.github.io/portfolio-site",
   "description": "",
   "main": "index.js",
   "scripts": {

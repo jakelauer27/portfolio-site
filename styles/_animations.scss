@@ -43,9 +43,11 @@
   animation-fill-mode: both;
 }
 
-.icon-container-animation {
+.icon-container-animation,
+.social-icon-container-animation {
 
-  .icon1 {
+  .icon1,
+  .github-box {
     @include rotateIn(.1s);
   }
 
@@ -54,7 +56,8 @@
     @include fadeIn(.5s);
   }
 
-  .icon2 {
+  .icon2,
+  .linkedIn-box {
     @include rotateIn(.2s);
   }
 
@@ -63,13 +66,18 @@
     @include fadeIn(.7s);
   }
 
-  .icon3 {
+  .icon3,
+  .email-box {
     @include rotateIn(.3s);
   }
 
   .icon-copy3,
   .icon-header3 {
     @include fadeIn(.9s);
+  }
+
+  .rickRoll-box {
+    @include rotateIn(.4s);
   }
 }
 
@@ -114,6 +122,11 @@
 
 .animate-project-animation {
   animation: slideUp .7s ease .2s;
+  animation-fill-mode: backwards;
+}
+
+.sass-talk-animation {
+  animation: slideUp .7s ease 0s;
   animation-fill-mode: backwards;
 }
 
@@ -168,131 +181,5 @@
   }
   100% {
     width: var(--fill);
-  }
-}
-
-@keyframes slideInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(350px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0px);
-  }
-}
-
-@keyframes slideDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-200px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0px);
-  }
-}
-
-@keyframes slideUp {
-  0% {
-    opacity: 0;
-    transform: translateY(150px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0px);
-  }
-}
-
-@keyframes slideUpPopup {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0px);
-  }
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes bounceAppear {
-  0% {
-    opacity: 0.0;
-    transform: scale(0.3);
-  }
-  50% {
-    opacity: 0.9;
-    transform: scale(1.03);
-  }
-  80% {
-    opacity: 1.0;
-    transform: scale(.97);
-  }
-  100% {
-    opacity: 1.0;
-    transform: scale(1);
-  }
-}
-
-@keyframes rotateIn {
-  0% {
-    opacity: 0.0;
-    transform: rotateY(90deg);
-  }
-  50% {
-    opacity: 0.9;
-    transform: rotateY(-10deg);
-  }
-  80% {
-    opacity: 1.0;
-    transform: rotateY(2deg);
-  }
-  100% {
-    opacity: 1.0;
-    transform: rotateY(0deg);
-  }
-}
-
-@keyframes bounceUp {
-  0% {
-    opacity: 0.0;
-    transform: translateY(200px);
-    
-  }
-  50% {
-    opacity: 0.9;
-    transform: translateY(-8px);
-    
-  }
-  100% {
-    opacity: 1.0;
-    transform: translateY(0px);
-  }
-}
-
-@keyframes slideInRightImg {
-  0% {
-    transform: translateX(600px);
-  }
-  100% {
-    transform: translateX(0px);
-  }
-}
-
-@keyframes slideInLeftImg {
-  0% {
-    transform: translateX(-600px);
-  }
-  100% {
-    transform: translateX(0px);
   }
 }

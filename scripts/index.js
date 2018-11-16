@@ -20,20 +20,26 @@ let sections = [$('.about-section-header'), $('.about-section-header-line'), $('
 $('.portfolio-section-header-line'), $('.talks-section-header'), $('.talks-section-header-line'), 
 $('.connect-section-header'), $('.connect-section-header-line'), $('.left-climber'), $('.right-climber'), 
 $('.profile-container'), $('.icon-container'), $('.graph-container'), $('.drumset'), 
-$('.wheel-project'), $('.smash-project'), $('.animate-project'), $('.piano')]
+$('.wheel-project'), $('.smash-project'), $('.animate-project'), $('.piano'), $('.sass-talk')]
 
 $(window).scroll( () => {
+  let pos = $(window).scrollTop();
+
   sections.forEach((item, i) => {
-    let distanceFromTop = $(window).scrollTop() - $(item).offset().top;
-    if (distanceFromTop > -550) {
+    let distanceFromTop = pos - $(item).offset().top;
+    if (distanceFromTop > -520) {
       $(item).addClass(`${item[0].classList[0]}-animation`);
       $(item).removeClass('none');
       sections.splice(i, 1)
     }
   })
 
+  if ($(document).height() - (pos + $(window).height()) < 60) {
+    $('.social-icon-container').addClass('social-icon-container-animation');
+    $('.social-icon-container').removeClass('none');
+  }
+
   ////// Link Highlighting
-  let pos = $(window).scrollTop();
 
   if (-75 < pos - $('.home').offset().top) { highlightLink('#home'); }
   if (-75 < pos - $('.about').offset().top) { highlightLink('#about'); }
@@ -94,7 +100,7 @@ function displayPopup(project) {
   $('.dark-overlay').removeClass('hide');
 }
 
-///////Continous Scrolling + animations
+///////Continous Slideshow Scrolling + animations
 
 function imageSlide(direction, project) {
   let slides = $(`.${project}-image`);
@@ -127,4 +133,17 @@ function imageSlide(direction, project) {
     $(slides[currentSlide]).removeClass(slideInDirection);
   }, 400)
 }
+
+//////Copy email to clipboard
+
+$('.email-box').on('click', () => {
+  navigator.clipboard.writeText('jake.lauer27@gmail.com').then(function() {
+    $('.clipboard-notification').removeClass('none')
+    setTimeout(() => {
+      $('.clipboard-notification').addClass('none')
+    }, 1300)
+  }, function() {
+    alert('jake.lauer27@gmail.com not copied to clipboard.')
+  });
+})
 

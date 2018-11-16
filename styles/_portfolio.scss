@@ -73,6 +73,7 @@
 }
 
 .project-popup {
+  border-radius: 10px;
   position: fixed;
   right: calc(50vw - 300px);
   top: 80px;
@@ -91,7 +92,7 @@
   }
 
   .arrow {
-    background-color: $darkBlue;
+    background-color: $mainPurple;
     position: absolute;
     top: 350px;
     transition: all .4s ease;
@@ -116,22 +117,23 @@
   }
 
   .popup-content-container {
-    background-color: $lightGrayBackground;
+    background-color: rgb(255, 255, 255);
     color: black;
     margin-top: -10px;
-    padding: 16px 10px 8px;
+    padding: 18px 15px 12px;
     overflow: hidden;
 
     .popup-underline {
-      background-color: rgb(170, 170, 170);
+      background-color: rgb(146, 146, 146);
       height: 1px; 
-      width: 270px;
+      width: 100%;
     }
 
     h2 {
       margin: 0;
       font-weight: 600;
       font-size: 1.8em;
+      color: rgb(70, 70, 70);
     }
 
     .popup-button {
@@ -183,4 +185,16 @@
 .piano {
   margin-top: 40px;
   width: 180px;
+}
+
+
+@media screen and (max-width: 410px) {
+  .portfolio-section {
+    .project-item {
+      transform: scale(0.8)
+    }
+  }
+  .project-popup {
+    transform: scale(0.8)
+  }
 }

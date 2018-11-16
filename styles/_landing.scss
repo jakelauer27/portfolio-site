@@ -19,6 +19,34 @@
     margin: 0 auto;
   }
 
+  .landing-text {
+    font-weight: 400;
+    font-size: 3em;
+    margin: 5px;
+  }
+
+  .right-arrow {
+    position: relative;
+    top: 2px;
+    left: 4px;
+    width: 22px;
+    transition: all .3s;
+  }
+
+  .intro-1 {
+    animation: fadeIn 1.5s ease .6s;
+    animation-fill-mode: both;
+  }
+
+  .landing-span {
+    animation: fadeIn 1.5s ease 1.4s;
+    animation-fill-mode: both;
+  }
+
+  .intro-2-container {
+    display: flex;
+  }
+
   .landing-container {
     align-items: center;
     display: flex;
@@ -26,54 +54,6 @@
     justify-content: center;
     margin-top: 35vh;
     position: absolute;
-
-    h1 {
-      font-weight: 400;
-      font-size: 3em;
-      margin: 5px;
-    }
-
-    .intro-1 {
-      animation: fadeIn 1.5s ease .6s;
-      animation-fill-mode: both;
-    }
-
-    .landing-span {
-      animation: fadeIn 1.5s ease 1.4s;
-      animation-fill-mode: both;
-    }
-
-    .intro-2-container {
-      display: flex;
-    }
-
-
-  @mixin line2Bounce($delay) {
-    animation: bounceAppear .5s ease $delay; 
-    animation-fill-mode: both;
-  }
-
-    .line2-1 {
-      @include line2Bounce(2.3s);
-    }
-    .line2-2 {
-      @include line2Bounce(2.5s);
-    }
-    .line2-3 {
-      @include line2Bounce(2.7s);
-    }
-    .line2-4 {
-      @include line2Bounce(2.9s);
-    }
-    .line2-5 {
-      @include line2Bounce(3.1s);
-    }
-    .line2-6 {
-      @include line2Bounce(3.3s);
-    }
-    .line2-7 {
-      @include line2Bounce(3.5s);
-    }
   }
 
   .landing-button {
@@ -83,6 +63,63 @@
 
   .header-color-2 {
     color: $mainPurple;
+  }
+
+  .line2-1 {
+    @include line2Bounce(2.3s);
+  }
+  .line2-2 {
+    @include line2Bounce(2.5s);
+  }
+  .line2-3 {
+    @include line2Bounce(2.7s);
+  }
+  .line2-4 {
+    @include line2Bounce(2.9s);
+  }
+  .line2-5 {
+    @include line2Bounce(3.1s);
+  }
+  .line2-6 {
+    @include line2Bounce(3.3s);
+  }
+  .line2-7 {
+    @include line2Bounce(3.5s);
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .landing-page {
+    .landing-text {
+    font-size: 2em;
+    display: inline-block;
+    margin: 3px;
+    }
+
+    .intro-2-container {
+      display: block;
+      margin: 0 30px;
+      text-align: center;
+    }
+
+    .landing-button {
+      font-size: 1.2em;
+      padding: 4px 10px 6px;
+    }
+
+    .right-arrow {
+      position: relative;
+      top: 4px;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .landing-page {
+    .landing-text {
+    font-size: 1.5em;
+    display: inline-block;
+    }
   }
 }
 

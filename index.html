@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Jake Lauer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="favicon.ico" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" media="screen" href="styles/main.css" />
 </head>
@@ -15,17 +16,17 @@
       <canvas id="canvas"></canvas>
     </div>
     <div class="content-container landing-container">
-      <h1 class="intro-1">Hello, <span class="landing-span">I'm</span><span class="header-color-2 landing-span"> Jake Lauer</span>.</h1>
+      <h1 class="landing-text intro-1">Hello, <span class="landing-span">I'm</span><span class="header-color-2 landing-span"> Jake Lauer</span>.</h1>
       <div class="intro-2-container">
-        <h1 class="line2-1">Some</h1>
-        <h1 class="line2-2">people</h1>
-        <h1 class="line2-3">think</h1>
-        <h1 class="line2-4">my</h1>
-        <h1 class="line2-5">work</h1>
-        <h1 class="line2-6">is</h1>
-        <h1 class="line2-7 header-color-2">Neat!</h1>
+        <h1 class="landing-text line2-1">Some</h1>
+        <h1 class="landing-text line2-2">people</h1>
+        <h1 class="landing-text line2-3">think</h1>
+        <h1 class="landing-text line2-4">my</h1>
+        <h1 class="landing-text line2-5">work</h1>
+        <h1 class="landing-text line2-6">is</h1>
+        <h1 class="landing-text line2-7 header-color-2">Neat!</h1>
       </div>
-      <button class="button landing-button">See for Yoself
+      <button class="button landing-button">See for yourself
           <img class="right-arrow" src="./images/arrow-pointing-to-right.svg" rel="Right arrow"/>
       </button>
     </div>
@@ -36,6 +37,7 @@
     <div class="nav-item" id="portfolio">Portfolio</div>
     <div class="nav-item" id="talks">Talks</div>
     <div class="nav-item" id="connect">Connect</div>
+    <div class="fas fa-bars hamburger-menu"></i>
   </nav> 
   <section class="about-section about">
     <div class="section-header-container about-header-container">
@@ -92,7 +94,7 @@
         </div>
         <h3 class="icon-header icon-header3">MATTER</h3>
         <p class="icon-copy icon-copy3">
-            As web developers, we get the chance 
+            Web developers get the chance 
             to impact so many people. I want to make a difference
             with my work!
         </p>
@@ -208,7 +210,7 @@
       <div class="header-line talks-section-header-line none"></div>        
     </div>
     <div class="projects-container talks-container">
-      <div class="sass-talk talk-item" style="background-image: url('images/sass-cover.jpg')">
+      <div class="sass-talk talk-item none" style="background-image: url('images/sass-cover.jpg')">
         <div class="white-background">
           <h2>kicking SASS</h2>
           <h3>Intro to scss</h3>
@@ -222,7 +224,7 @@
       <h1 class="section-header connect-section-header none">CONNECT</h1>
       <div class="header-line connect-section-header-line none"></div>
     </div>
-      <div class="social-icon-container">
+      <div class="social-icon-container none">
         <a class="social-box github-box" href="https://github.com/jakelauer27" target="_blank">
           <i class="social-icon fab fa-github-alt github"></i>
         </a>     
@@ -231,6 +233,7 @@
         </a>
         <a class="social-box email-box">
           <i class="social-icon fas fa-envelope email"></i>
+          <div class="clipboard-notification none"><p>Copied!</p></div>
         </a>
         <a class="social-box rickRoll-box" href="https://www.youtube.com/watch?v=oHg5SJYRHA0" target="_blank">
           <i class="social-icon fas fa-bath rickRoll"></i>
@@ -275,6 +278,7 @@
     <img class="arrow right-arrow" src="images/right-arrow.svg" />
     <div class="popup-content-container">
       <h2 class="popup-title">Wheel of Fortune</h2>
+      <div class="popup-underline"></div>
       <p>Enjoy a round of this three-player recreation of the classic Wheel of Fortune 
         game. Spin the wheel with friends and solve the puzzles to 
         compete for a chance to spin the bonus wheel and take home massive 
@@ -293,6 +297,7 @@
     <img class="arrow right-arrow" src="images/right-arrow.svg" />
     <div class="popup-content-container">
       <h2 class="popup-title">CSS aniMate</h2>
+      <div class="popup-underline"></div>
       <p>SCSS Animate provides a playground for web developers to create 
         and adjust CSS keyframes animations, displaying the results 
         in real time. Find an animation you like, make your tweaks, 
