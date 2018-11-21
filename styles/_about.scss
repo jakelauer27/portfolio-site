@@ -101,6 +101,76 @@
   top: 20px;
 }
 
+//////Skills
+
+.skills-container {
+  margin-top: 20px;
+  margin-bottom: -20px;
+  width: 92vw;
+}
+
+.skills-row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+@mixin skillLogo ($width, $height, $top, $left, $animation, $delay) {
+  animation: $animation 1s ease $delay;   
+  animation-fill-mode: both;  
+  height: $height;
+  left: $left;
+  position: relative;
+  top: $top;
+  width: $width;
+  margin: 20px;
+}
+
+.skills-row-2 {
+  justify-content: space-between
+}
+
+.skills-container-animation {
+  .html-logo {
+    @include skillLogo(130px, 190px, 20px, 0px, slideInLeft, .1s)
+  }
+  
+  .js-logo {
+    @include skillLogo(130px, 190px, -40px, 0px, slideInLeft, .0s)
+  }
+  
+  .css-logo {
+    @include skillLogo(130px, 190px, 20px, 0px, slideInRight, .2s)
+  }
+  
+  .sass-logo {
+    @include skillLogo(160px, 150px, -70px, 0px, slideInLeft, .3s)
+  }
+  
+  .react-logo {
+    @include skillLogo(160px, 150px, -20px, 0px, slideInRight, .4s)
+  }
+
+  .jquery-logo {
+    @include skillLogo(150px, 150px, -70px, 0px, slideInRight, .5s)
+  }
+  
+  .redux-logo {
+    @include skillLogo(160px, 160px, -100px, 0px, slideInLeft, .6s);
+    margin: 0 auto;
+  }
+  
+  .photoshop-logo {
+    @include skillLogo(130px, 130px, -73px, 0px, slideInRight, .7s);
+    margin: 0 auto;
+  }
+  
+  .node-logo {
+    @include skillLogo(300px, 90px, -90px, 10px, slideInLeft, .8s);
+    margin: 0 auto;
+  }
+}
+
 
 ///////BAR GRAPH
 
@@ -157,7 +227,7 @@
   .bar-label {
     font-size: 1em;
     min-width: 120px;
-    padding-top: 9px;
+    padding-top: 4px;
   }
 }
 

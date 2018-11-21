@@ -19,7 +19,7 @@ function navScroll(section) {
 let sections = [$('.about-section-header'), $('.about-section-header-line'), $('.portfolio-section-header'),
 $('.portfolio-section-header-line'), $('.talks-section-header'), $('.talks-section-header-line'), 
 $('.connect-section-header'), $('.connect-section-header-line'), $('.left-climber'), $('.right-climber'), 
-$('.profile-container'), $('.icon-container'), $('.graph-container'), $('.drumset'), 
+$('.profile-container'), $('.icon-container'), $('.skills-container'), $('.drumset'), 
 $('.wheel-project'), $('.smash-project'), $('.animate-project'), $('.piano'), $('.sass-talk')]
 
 $(window).scroll( () => {
@@ -27,7 +27,7 @@ $(window).scroll( () => {
 
   sections.forEach((item, i) => {
     let distanceFromTop = pos - $(item).offset().top;
-    if (distanceFromTop > -520) {
+    if (distanceFromTop > -630) {
       $(item).addClass(`${item[0].classList[0]}-animation`);
       $(item).removeClass('none');
       sections.splice(i, 1)
