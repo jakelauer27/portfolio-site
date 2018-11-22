@@ -112,6 +112,7 @@
 .skills-row {
   display: flex;
   justify-content: center;
+  position: relative;
   width: 100%;
 }
 
@@ -148,7 +149,12 @@
   }
   
   .react-logo {
-    @include skillLogo(160px, 150px, -20px, 0px, slideInRight, .4s)
+    @include skillLogo(160px, 140px, -20px, 0px, rotateInRight, .4s);
+    padding: 10px 0px 10px;
+  }
+
+  .rotate-react {
+    animation: rotate 20s linear infinite;
   }
 
   .jquery-logo {
@@ -168,6 +174,26 @@
   .node-logo {
     @include skillLogo(300px, 90px, -90px, 10px, slideInLeft, .8s);
     margin: 0 auto;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);  
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes rotateInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(350px) rotate(30deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px) rotate(0deg);
   }
 }
 

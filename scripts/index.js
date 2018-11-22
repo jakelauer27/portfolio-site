@@ -30,6 +30,11 @@ $(window).scroll( () => {
     if (distanceFromTop > -630) {
       $(item).addClass(`${item[0].classList[0]}-animation`);
       $(item).removeClass('none');
+    if ($(item).hasClass('skills-container')) {
+      setTimeout(() => {
+        $('.react-logo').addClass('rotate-react');
+      }, 1300)
+    }
       sections.splice(i, 1)
     }
   })

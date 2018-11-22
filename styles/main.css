@@ -646,6 +646,7 @@ nav .hamburger-menu:hover {
 .skills-row {
   display: flex;
   justify-content: center;
+  position: relative;
   width: 100%;
 }
 
@@ -694,14 +695,18 @@ nav .hamburger-menu:hover {
   margin: 20px;
 }
 .skills-container-animation .react-logo {
-  animation: slideInRight 1s ease 0.4s;
+  animation: rotateInRight 1s ease 0.4s;
   animation-fill-mode: both;
-  height: 150px;
+  height: 140px;
   left: 0px;
   position: relative;
   top: -20px;
   width: 160px;
   margin: 20px;
+  padding: 10px 0px 10px;
+}
+.skills-container-animation .rotate-react {
+  animation: rotate 20s linear infinite;
 }
 .skills-container-animation .jquery-logo {
   animation: slideInRight 1s ease 0.5s;
@@ -747,6 +752,24 @@ nav .hamburger-menu:hover {
   margin: 0 auto;
 }
 
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes rotateInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(350px) rotate(30deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px) rotate(0deg);
+  }
+}
 .bar {
   display: flex;
   width: 80vw;
