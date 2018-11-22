@@ -1,3 +1,11 @@
+$('.hamburger-menu').on('click', () => {
+  $('.hamburger-menu').toggleClass('ham-menu');
+  $('.hamburger-menu').toggleClass('x-menu');
+  $('nav').toggleClass('nav-mobile');
+  $('nav').toggleClass('nav-mobile-collapsed');
+
+})
+
 $('.landing-button').click(()=> {
   $('html, body').animate({
     scrollTop: $('nav').offset().top
@@ -27,7 +35,7 @@ $(window).scroll( () => {
 
   sections.forEach((item, i) => {
     let distanceFromTop = pos - $(item).offset().top;
-    if (distanceFromTop > -630) {
+    if (distanceFromTop > -700) {
       $(item).addClass(`${item[0].classList[0]}-animation`);
       $(item).removeClass('none');
     if ($(item).hasClass('skills-container')) {

@@ -106,7 +106,7 @@
 .skills-container {
   margin-top: 20px;
   margin-bottom: -20px;
-  width: 92vw;
+  width: 80%;
 }
 
 .skills-row {
@@ -116,15 +116,19 @@
   width: 100%;
 }
 
+.skill-logo {
+  transition: all .3s ease;
+}
+
 @mixin skillLogo ($width, $height, $top, $left, $animation, $delay) {
   animation: $animation 1s ease $delay;   
   animation-fill-mode: both;  
   height: $height;
   left: $left;
   position: relative;
+  margin: 20px;
   top: $top;
   width: $width;
-  margin: 20px;
 }
 
 .skills-row-2 {
@@ -133,15 +137,15 @@
 
 .skills-container-animation {
   .html-logo {
-    @include skillLogo(130px, 190px, 20px, 0px, slideInLeft, .1s)
+    @include skillLogo(110px, 160px, 20px, 0px, slideInLeft, .1s)
   }
   
   .js-logo {
-    @include skillLogo(130px, 190px, -40px, 0px, slideInLeft, .0s)
+    @include skillLogo(110px, 160px, -40px, 0px, slideInLeft, .0s)
   }
   
   .css-logo {
-    @include skillLogo(130px, 190px, 20px, 0px, slideInRight, .2s)
+    @include skillLogo(110px, 160px, 20px, 0px, slideInRight, .2s)
   }
   
   .sass-logo {
@@ -149,7 +153,7 @@
   }
   
   .react-logo {
-    @include skillLogo(160px, 140px, -20px, 0px, rotateInRight, .4s);
+    @include skillLogo(160px, 140px, -20px, -15px, rotateInRight, .4s);
     padding: 10px 0px 10px;
   }
 
@@ -158,16 +162,16 @@
   }
 
   .jquery-logo {
-    @include skillLogo(150px, 150px, -70px, 0px, slideInRight, .5s)
+    @include skillLogo(130px, 130px, -70px, 0px, slideInRight, .5s)
   }
   
   .redux-logo {
-    @include skillLogo(160px, 160px, -100px, 0px, slideInLeft, .6s);
+    @include skillLogo(145px, 145px, -100px, 0px, slideInLeft, .6s);
     margin: 0 auto;
   }
   
   .photoshop-logo {
-    @include skillLogo(130px, 130px, -73px, 0px, slideInRight, .7s);
+    @include skillLogo(115px, 115px, -73px, 0px, slideInRight, .7s);
     margin: 0 auto;
   }
   
@@ -177,76 +181,46 @@
   }
 }
 
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);  
-  }
-  to {
-    transform: rotate(-360deg);
-  }
-}
-
-@keyframes rotateInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(350px) rotate(30deg);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0px) rotate(0deg);
-  }
-}
-
-
-///////BAR GRAPH
-
-.bar {
-  display: flex;
-  width: 80vw;
-  margin: 16px auto;
-}
-
-.bar-label {
-  background-color: #28C2E4;
-  border-radius: 3px 0px 0px 3px;
-  width: 25%;
-  padding: 4px;
-  font-size: 1.3em;
-  text-align: center;
-}
-
-.bar-background {
-  background-color: $lightGrayBackground;
-  border-radius: 0px 3px 3px 0px;
-  height: 36px;
-  position: relative;
-  width: 75%;
-
-  p {
-    color: black;
-    text-shadow: 1px 1px white;
-    font-size: 1.3em;
-    font-weight: 300;
-    position: absolute;
-    right: 2px;
-    margin: 5px;
-  }
-}
-
-.bar-fill {
-  background-color: $darkBlue;
-  border-radius: 0px 2px 2px 0px;
-  position: absolute;
-  height: 36px;
-  left: 0px;
-  width: var(--fill);
-}
-
 .drumset {
   margin-top: 40px;
   position: relative;
   right: 4px;
   width: 180px;
+}
+
+@media screen and (max-width: 940px) {
+  .skills-container-animation {
+
+    .skills-row-2 {
+      position: relative;
+      justify-content: center;
+      margin-top: 160px;
+      margin-bottom: 30px;
+    }
+    .react-logo {
+      position: absolute;
+      left: auto;
+      top: -190px;
+      padding: 0px;
+      margin: 0px;
+    }
+
+    .jquery-logo {
+      top: -50px;
+    }
+
+    .skills-row-3 {
+      justify-content: center;
+
+      .skill-logo {
+        margin: 25px;
+      }
+    }
+
+    .node-logo {
+      left: 0px;
+    }
+  }
 }
 
 @media screen and (max-width: 740px) {
@@ -288,5 +262,50 @@
   .icon-group {
     width: 100%;
     margin: 20px auto;
+  }
+
+  .skills-container-animation {
+
+    .skills-row-2 {
+      margin-top: 110px;
+    }
+
+    .js-logo,
+    .css-logo,
+    .html-logo {
+      height: 100px;
+      width: 70px;
+    }
+
+    .react-logo {
+      height: 80px;
+      width: 92px;
+      top: -140px;
+    }
+
+    .sass-logo {
+      height: 120px;
+      width: 120px;
+    }
+
+    .jquery-logo {
+      height: 100px;
+      width: 100px;
+    }
+
+    .redux-logo {
+      height: 120px;
+      width: 120px;
+    }
+
+    .photoshop-logo {
+      height: 90px;
+      width: 90px;
+    }
+
+    .node-logo {
+      height: 70px;
+      width: 240px;
+    }
   }
 }

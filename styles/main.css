@@ -185,6 +185,69 @@
     transform: translateX(2000px);
   }
 }
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes rotateInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(350px) rotate(30deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px) rotate(0deg);
+  }
+}
+@keyframes xRotateTop {
+  from {
+    transform: rotate(405deg);
+    top: 20px;
+  }
+  to {
+    transform: rotate(0deg);
+    top: 8px;
+  }
+}
+@keyframes xRotateBottom {
+  from {
+    transform: rotate(-405deg);
+    top: 20px;
+  }
+  to {
+    transform: rotate(0deg);
+    top: 32px;
+  }
+}
+@keyframes xRotateMiddle {
+  from {
+    transform: rotate(405deg);
+  }
+  to {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+}
+@keyframes hamRotateTop {
+  to {
+    transform: rotate(225deg);
+  }
+}
+@keyframes hamRotateBottom {
+  to {
+    transform: rotate(-405deg);
+  }
+}
+@keyframes hamMiddle {
+  to {
+    transform: rotate(360deg);
+    opacity: 0;
+  }
+}
 .none {
   opacity: 0;
 }
@@ -519,11 +582,91 @@ nav .hamburger-menu {
   display: none;
   font-size: 2.2em;
   margin-right: 15px;
+  height: 43px;
+  position: relative;
+  width: 35px;
+  transition: all 0.4s ease;
 }
 nav .hamburger-menu:hover {
   cursor: pointer;
 }
+nav .hamburger-bar {
+  background-color: white;
+  border-radius: 6px;
+  height: 5px;
+  position: absolute;
+  width: 35px;
+}
+nav .ham-menu .hamburger-top {
+  animation: xRotateTop 0.5s ease;
+  animation-fill-mode: forwards;
+  top: 8px;
+}
+nav .ham-menu .hamburger-middle {
+  animation: xRotateMiddle 0.5s ease;
+  animation-fill-mode: forwards;
+  top: 20px;
+}
+nav .ham-menu .hamburger-bottom {
+  animation: xRotateBottom 0.5s ease;
+  animation-fill-mode: forwards;
+  top: 32px;
+}
+nav .x-menu .hamburger-top {
+  animation: hamRotateTop 0.4s ease;
+  animation-fill-mode: forwards;
+  top: 20px;
+}
+nav .x-menu .hamburger-middle {
+  animation: hamMiddle 0.4s ease;
+  animation-fill-mode: forwards;
+  top: 20px;
+}
+nav .x-menu .hamburger-bottom {
+  animation: hamRotateBottom 0.4s ease;
+  animation-fill-mode: forwards;
+  top: 20px;
+}
 
+.nav-mobile {
+  flex-direction: column;
+  animation: nav-drop 0.4s ease;
+  animation-fill-mode: forwards;
+}
+.nav-mobile .nav-item {
+  display: block;
+}
+.nav-mobile .hamburger-menu {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.nav-mobile-collapsed {
+  animation: nav-close 0.4s ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes nav-drop {
+  from {
+    height: 45px;
+    overflow: hidden;
+  }
+  to {
+    height: 215px;
+    overflow: hidden;
+  }
+}
+@keyframes nav-close {
+  from {
+    height: 215px;
+    overflow: hidden;
+  }
+  to {
+    height: 45px;
+    overflow: hidden;
+  }
+}
 @media screen and (max-width: 630px) {
   nav {
     display: flex;
@@ -640,7 +783,7 @@ nav .hamburger-menu:hover {
 .skills-container {
   margin-top: 20px;
   margin-bottom: -20px;
-  width: 92vw;
+  width: 80%;
 }
 
 .skills-row {
@@ -650,6 +793,10 @@ nav .hamburger-menu:hover {
   width: 100%;
 }
 
+.skill-logo {
+  transition: all 0.3s ease;
+}
+
 .skills-row-2 {
   justify-content: space-between;
 }
@@ -657,32 +804,32 @@ nav .hamburger-menu:hover {
 .skills-container-animation .html-logo {
   animation: slideInLeft 1s ease 0.1s;
   animation-fill-mode: both;
-  height: 190px;
+  height: 160px;
   left: 0px;
   position: relative;
-  top: 20px;
-  width: 130px;
   margin: 20px;
+  top: 20px;
+  width: 110px;
 }
 .skills-container-animation .js-logo {
   animation: slideInLeft 1s ease 0s;
   animation-fill-mode: both;
-  height: 190px;
+  height: 160px;
   left: 0px;
   position: relative;
-  top: -40px;
-  width: 130px;
   margin: 20px;
+  top: -40px;
+  width: 110px;
 }
 .skills-container-animation .css-logo {
   animation: slideInRight 1s ease 0.2s;
   animation-fill-mode: both;
-  height: 190px;
+  height: 160px;
   left: 0px;
   position: relative;
-  top: 20px;
-  width: 130px;
   margin: 20px;
+  top: 20px;
+  width: 110px;
 }
 .skills-container-animation .sass-logo {
   animation: slideInLeft 1s ease 0.3s;
@@ -690,19 +837,19 @@ nav .hamburger-menu:hover {
   height: 150px;
   left: 0px;
   position: relative;
+  margin: 20px;
   top: -70px;
   width: 160px;
-  margin: 20px;
 }
 .skills-container-animation .react-logo {
   animation: rotateInRight 1s ease 0.4s;
   animation-fill-mode: both;
   height: 140px;
-  left: 0px;
+  left: -15px;
   position: relative;
+  margin: 20px;
   top: -20px;
   width: 160px;
-  margin: 20px;
   padding: 10px 0px 10px;
 }
 .skills-container-animation .rotate-react {
@@ -711,33 +858,33 @@ nav .hamburger-menu:hover {
 .skills-container-animation .jquery-logo {
   animation: slideInRight 1s ease 0.5s;
   animation-fill-mode: both;
-  height: 150px;
+  height: 130px;
   left: 0px;
   position: relative;
-  top: -70px;
-  width: 150px;
   margin: 20px;
+  top: -70px;
+  width: 130px;
 }
 .skills-container-animation .redux-logo {
   animation: slideInLeft 1s ease 0.6s;
   animation-fill-mode: both;
-  height: 160px;
+  height: 145px;
   left: 0px;
   position: relative;
-  top: -100px;
-  width: 160px;
   margin: 20px;
+  top: -100px;
+  width: 145px;
   margin: 0 auto;
 }
 .skills-container-animation .photoshop-logo {
   animation: slideInRight 1s ease 0.7s;
   animation-fill-mode: both;
-  height: 130px;
+  height: 115px;
   left: 0px;
   position: relative;
-  top: -73px;
-  width: 130px;
   margin: 20px;
+  top: -73px;
+  width: 115px;
   margin: 0 auto;
 }
 .skills-container-animation .node-logo {
@@ -746,69 +893,10 @@ nav .hamburger-menu:hover {
   height: 90px;
   left: 10px;
   position: relative;
+  margin: 20px;
   top: -90px;
   width: 300px;
-  margin: 20px;
   margin: 0 auto;
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(-360deg);
-  }
-}
-@keyframes rotateInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(350px) rotate(30deg);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0px) rotate(0deg);
-  }
-}
-.bar {
-  display: flex;
-  width: 80vw;
-  margin: 16px auto;
-}
-
-.bar-label {
-  background-color: #28C2E4;
-  border-radius: 3px 0px 0px 3px;
-  width: 25%;
-  padding: 4px;
-  font-size: 1.3em;
-  text-align: center;
-}
-
-.bar-background {
-  background-color: #ECECEC;
-  border-radius: 0px 3px 3px 0px;
-  height: 36px;
-  position: relative;
-  width: 75%;
-}
-.bar-background p {
-  color: black;
-  text-shadow: 1px 1px white;
-  font-size: 1.3em;
-  font-weight: 300;
-  position: absolute;
-  right: 2px;
-  margin: 5px;
-}
-
-.bar-fill {
-  background-color: #196096;
-  border-radius: 0px 2px 2px 0px;
-  position: absolute;
-  height: 36px;
-  left: 0px;
-  width: var(--fill);
 }
 
 .drumset {
@@ -818,6 +906,33 @@ nav .hamburger-menu:hover {
   width: 180px;
 }
 
+@media screen and (max-width: 940px) {
+  .skills-container-animation .skills-row-2 {
+    position: relative;
+    justify-content: center;
+    margin-top: 160px;
+    margin-bottom: 30px;
+  }
+  .skills-container-animation .react-logo {
+    position: absolute;
+    left: auto;
+    top: -190px;
+    padding: 0px;
+    margin: 0px;
+  }
+  .skills-container-animation .jquery-logo {
+    top: -50px;
+  }
+  .skills-container-animation .skills-row-3 {
+    justify-content: center;
+  }
+  .skills-container-animation .skills-row-3 .skill-logo {
+    margin: 25px;
+  }
+  .skills-container-animation .node-logo {
+    left: 0px;
+  }
+}
 @media screen and (max-width: 740px) {
   .bar-label {
     font-size: 1em;
@@ -855,6 +970,41 @@ nav .hamburger-menu:hover {
   .icon-group {
     width: 100%;
     margin: 20px auto;
+  }
+
+  .skills-container-animation .skills-row-2 {
+    margin-top: 110px;
+  }
+  .skills-container-animation .js-logo,
+.skills-container-animation .css-logo,
+.skills-container-animation .html-logo {
+    height: 100px;
+    width: 70px;
+  }
+  .skills-container-animation .react-logo {
+    height: 80px;
+    width: 92px;
+    top: -140px;
+  }
+  .skills-container-animation .sass-logo {
+    height: 120px;
+    width: 120px;
+  }
+  .skills-container-animation .jquery-logo {
+    height: 100px;
+    width: 100px;
+  }
+  .skills-container-animation .redux-logo {
+    height: 120px;
+    width: 120px;
+  }
+  .skills-container-animation .photoshop-logo {
+    height: 90px;
+    width: 90px;
+  }
+  .skills-container-animation .node-logo {
+    height: 70px;
+    width: 240px;
   }
 }
 .portfolio-section {
@@ -1022,10 +1172,6 @@ nav .hamburger-menu:hover {
   .portfolio-section .project-item {
     transform: scale(0.8);
   }
-
-  .project-popup {
-    transform: scale(0.8);
-  }
 }
 .connect {
   background-color: #32394B;
@@ -1092,15 +1238,11 @@ nav .hamburger-menu:hover {
 }
 
 .email-box:after {
-  background-color: #9F68FF;
+  background-color: #65be65;
 }
 
 .linkedIn-box:after {
   background-color: #0077B5;
-}
-
-.rickRoll-box:after {
-  background-color: #65be65;
 }
 
 .social-icon {
@@ -1121,16 +1263,12 @@ nav .hamburger-menu:hover {
 }
 
 .email {
-  color: #9F68FF;
-}
-
-.rickRoll {
   color: #65be65;
 }
 
 .clipboard-notification {
   align-items: center;
-  background-color: #9F68FF;
+  background-color: #65be65;
   display: flex;
   font-size: 1.4em;
   font-weight: 300;
@@ -1258,6 +1396,14 @@ nav .hamburger-menu:hover {
   transition: all 0.5s ease;
 }
 
+@media screen and (max-width: 410px) {
+  .talks .talks-container {
+    margin: 0px;
+  }
+  .talks .talk-item {
+    transform: scale(0.8);
+  }
+}
 body {
   font-family: "Raleway", sans-serif;
   color: white;

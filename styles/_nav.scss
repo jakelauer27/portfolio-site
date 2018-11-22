@@ -28,10 +28,107 @@ nav {
     display: none;
     font-size: 2.2em;
     margin-right: 15px;
+    height: 43px;
+    position: relative;
+    width: 35px;
+    transition: all .4s ease;
 
     &:hover {
       cursor: pointer;
     }
+  }
+
+  .hamburger-bar {
+    background-color: white;
+    border-radius: 6px;
+    height: 5px;
+    position: absolute;
+    width: 35px;
+  }
+
+  .ham-menu {
+    .hamburger-top {
+      animation: xRotateTop .5s ease;
+      animation-fill-mode: forwards; 
+      top: 8px
+    }
+
+    .hamburger-middle {
+      animation: xRotateMiddle .5s ease; 
+      animation-fill-mode: forwards; 
+      top: 20px;
+    }
+
+    .hamburger-bottom {
+      animation: xRotateBottom .5s ease;
+      animation-fill-mode: forwards; 
+      top: 32px;
+    }
+  }
+
+  .x-menu {
+    .hamburger-top {
+      animation: hamRotateTop .4s ease;
+      animation-fill-mode: forwards; 
+      top: 20px
+    }
+
+    .hamburger-middle {
+      animation: hamMiddle .4s ease; 
+      animation-fill-mode: forwards;
+      top: 20px; 
+    }
+
+    .hamburger-bottom {
+      animation: hamRotateBottom .4s ease;
+      animation-fill-mode: forwards; 
+      top: 20px;
+    }
+  }
+}
+
+.nav-mobile {
+  flex-direction: column;
+  animation: nav-drop .4s ease;
+  animation-fill-mode: forwards;
+
+  .nav-item {
+    display: block;
+  }
+
+  .hamburger-menu {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+}
+
+.nav-mobile-collapsed {
+  animation: nav-close .4s ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes nav-drop {
+  from {
+    height: 45px;
+    overflow: hidden;
+  }
+
+  to {
+    height: 215px;
+    overflow: hidden;
+  }
+}
+
+@keyframes nav-close {
+  from {
+    height: 215px;
+    overflow: hidden;
+  }
+
+  to {
+    height: 45px;
+    overflow: hidden;
   }
 }
 

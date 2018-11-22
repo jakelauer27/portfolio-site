@@ -60,3 +60,14 @@
   }
 
 }
+
+@media screen and (max-width: 410px) {
+  .talks {
+    .talks-container {
+      margin: 0px;
+    }
+    .talk-item {
+      transform: scale(0.8);
+    }
+  }
+}

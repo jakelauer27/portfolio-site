@@ -66,15 +66,11 @@
 }
 
 .email-box:after {
-  background-color: $mainPurple;
+  background-color: rgb(101, 190, 101);
 }
 
 .linkedIn-box:after {
   background-color: #0077B5;
-}
-
-.rickRoll-box:after {
-  background-color: rgb(101, 190, 101);
 }
 
 .social-icon {
@@ -95,16 +91,12 @@
 }
 
 .email {
-  color: $mainPurple;
-}
-
-.rickRoll {
   color: rgb(101, 190, 101);
 }
 
 .clipboard-notification {
   align-items: center;
-  background-color: $mainPurple;
+  background-color: rgb(101, 190, 101);
   display: flex;
   font-size: 1.4em;
   font-weight: 300;

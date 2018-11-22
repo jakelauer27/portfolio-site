@@ -197,3 +197,77 @@
     transform: translateX(2000px);
   }
 }
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);  
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes rotateInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(350px) rotate(30deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px) rotate(0deg);
+  }
+}
+
+
+///////Hamburger menu 
+
+@keyframes xRotateTop {
+  from {
+    transform: rotate(405deg);
+    top: 20px;
+  }
+  to {
+    transform: rotate(0deg);
+    top: 8px
+  }
+}
+
+@keyframes xRotateBottom {
+  from {
+    transform: rotate(-405deg);
+    top: 20px;
+  }
+  to {
+    transform: rotate(0deg);
+    top: 32px;
+  }
+}
+
+@keyframes xRotateMiddle {
+  from {
+    transform: rotate(405deg);
+  }
+  to {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes hamRotateTop {
+  to {
+    transform: rotate(225deg);
+  }
+}
+
+@keyframes hamRotateBottom {
+  to {
+    transform: rotate(-405deg);
+  }
+}
+
+@keyframes hamMiddle {
+  to {
+    transform: rotate(360deg);
+    opacity: 0;
+  }
+}
