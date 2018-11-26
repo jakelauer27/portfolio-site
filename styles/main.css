@@ -887,15 +887,15 @@ nav .x-menu .hamburger-bottom {
   width: 115px;
   margin: 0 auto;
 }
-.skills-container-animation .node-logo {
+.skills-container-animation .router-logo {
   animation: slideInLeft 1s ease 0.8s;
   animation-fill-mode: both;
-  height: 90px;
-  left: 10px;
+  height: 150px;
+  left: 0px;
   position: relative;
   margin: 20px;
   top: -90px;
-  width: 300px;
+  width: 250px;
   margin: 0 auto;
 }
 

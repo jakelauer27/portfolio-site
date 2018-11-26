@@ -175,8 +175,8 @@
     margin: 0 auto;
   }
   
-  .node-logo {
-    @include skillLogo(300px, 90px, -90px, 10px, slideInLeft, .8s);
+  .router-logo {
+    @include skillLogo(250px, 150px, -90px, 0px, slideInLeft, .8s);
     margin: 0 auto;
   }
 }
