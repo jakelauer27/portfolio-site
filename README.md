@@ -5,4 +5,4 @@ In building this site, I chose to focus primarily on using CSS animations, canva
 
 ## See it live
 
-https://jakelauer27.github.io/portfolio/
+https://jacoblauer.com
