@@ -1,5 +1,5 @@
 .connect {
-  background-color: $lessDarkBackground;
+  background-color: $darkBackground;
   height: 418px;
   overflow: hidden;
   position: relative;
@@ -30,7 +30,7 @@
 }
 
 .social-box {
-  background-color: $darkBackground;
+  background-color: $lessDarkBackground;
   border-radius: 10px;
   height: 30px;
   overflow: hidden;

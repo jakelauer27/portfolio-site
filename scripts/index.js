@@ -25,10 +25,10 @@ function navScroll(section) {
 ///Scrolling Animations 
 
 let sections = [$('.about-section-header'), $('.about-section-header-line'), $('.portfolio-section-header'),
-$('.portfolio-section-header-line'), $('.talks-section-header'), $('.talks-section-header-line'), 
+$('.portfolio-section-header-line'),
 $('.connect-section-header'), $('.connect-section-header-line'), $('.left-climber'), $('.right-climber'), 
 $('.profile-container'), $('.icon-container'), $('.skills-container'), $('.drumset'), 
-$('.wheel-project'), $('.smash-project'), $('.animate-project'), $('.piano'), $('.sass-talk')]
+$('.wheel-project'), $('.smash-project'), $('.animate-project'), $('.piano')]
 
 $(window).scroll( () => {
   let pos = $(window).scrollTop();
@@ -57,8 +57,8 @@ $(window).scroll( () => {
   if (-75 < pos - $('.home').offset().top) { highlightLink('#home'); }
   if (-75 < pos - $('.about').offset().top) { highlightLink('#about'); }
   if (-75 < pos - $('.portfolio').offset().top) { highlightLink('#portfolio'); }
-  if (-75 < pos - $('.talks').offset().top) { highlightLink('#talks'); }
-  if (pos + $(window).height() == $(document).height()) { highlightLink('#connect'); }
+  // if (-75 < pos - $('.talks').offset().top) { highlightLink('#talks'); }
+  if ($(document).height() <= pos + $(window).height() + 65) { highlightLink('#connect'); }
 
   function highlightLink(link) {
     $('nav .highlight').removeClass('highlight');
