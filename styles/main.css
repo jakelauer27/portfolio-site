@@ -1038,6 +1038,7 @@ nav .x-menu .hamburger-bottom {
   color: #9F68FF;
   position: relative;
   top: -30px;
+  text-align: center;
   transform: translateY(-300px);
   transition: all 0.3s ease;
 }

@@ -32,7 +32,6 @@
   animation-fill-mode: both;
 }
 
-
 @mixin rotateIn($delay) {
   animation: rotateIn 550ms linear $delay; 
   animation-fill-mode: both;
