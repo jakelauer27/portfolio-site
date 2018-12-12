@@ -37,8 +37,9 @@
     }
 
     .learn-more-btn {
-      position: relative;
-      top: 10px;
+      position: absolute;
+      top: 190px;
+      right: 87px;
       transform: translateY(300px);
     }
 
@@ -51,6 +52,7 @@
       height: 300px;
       overflow: hidden;
       width: 366px;
+      position: relative;
       transition: all .5s ease;
     }
 

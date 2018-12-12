@@ -1043,8 +1043,9 @@ nav .x-menu .hamburger-bottom {
   transition: all 0.3s ease;
 }
 .portfolio-section .project-item .learn-more-btn {
-  position: relative;
-  top: 10px;
+  position: absolute;
+  top: 190px;
+  right: 87px;
   transform: translateY(300px);
 }
 .portfolio-section .project-item .white-background {
@@ -1056,6 +1057,7 @@ nav .x-menu .hamburger-bottom {
   height: 300px;
   overflow: hidden;
   width: 366px;
+  position: relative;
   transition: all 0.5s ease;
 }
 .portfolio-section .project-item:hover .white-background {

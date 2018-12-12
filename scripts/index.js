@@ -27,7 +27,7 @@ function navScroll(section) {
 let sections = [$('.about-section-header'), $('.about-section-header-line'), $('.portfolio-section-header'),
 $('.portfolio-section-header-line'), $('.connect-section-header'), $('.connect-section-header-line'), 
 $('.left-climber'), $('.right-climber'), 
-$('.profile-container'), $('.icon-container'), $('.skills-container'), $('.drumset'), 
+$('.profile-container'), $('.icon-container'), $('.skills-container'), $('.drumset'), $('.starwars-project'),
 $('.wheel-project'), $('.smash-project'), $('.animate-project'), $('.piano')]
 
 $(window).scroll( () => {
